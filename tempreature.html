@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Temperature Converter</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: whitesmoke;
+            }
+            h1{
+                text-align: center;
+                margin-top: 50px;
+            }
+            form{
+                text-align: center;
+                margin-top: 50px;
+            }
+            label{
+                display: block;
+                margin-top: 20px;
+                font-weight: bold;
+                font-size: 16px;
+            }
+            input[typee="number"] {
+                width: 200px;
+                padding: 10px;
+                border-radius: 5px;
+                border: none;
+                background-color: white;
+                box-shadow:0px 0px 5px rgba(red, green, blue, alpha);
+                font-size: 16px;
+                color: #333;
+                margin-top: 5px;
+            }
+            button{
+                margin-top: 20px;
+                padding: 10px;
+                background-color: red;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: green;
+            }
+            .result{
+                text-align: center;
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 50px;
+                    }
+        </style>
+    </head>
+    <body>
+        <h1>Temperature Converter</h1>
+        <form >
+            ,<label>Enter Temperature(in celsius):</label>
+            <input type="number" id="celsius" placeholder="Enter Temperature in Celsius"required>
+
+            <label>Converted Temperature:</label>
+            <div id="output"></div>
+
+            <button type="button" onclick="convert()">Convert</button>
+        </form>
+
+        <script>
+            function convert(){
+                var celsius = parseFloat(document.getElementById('celsius').value);
+
+                var fahrenheit = (celsius * 1.8)+32;
+                var kelvin = celsius + 273.15;
+                document.getElementById('output').innerHTML=celsius +" &deg;C =" + fahrenheit.toFixed(2) + " &deg;F =" + kelvin.toFixed(2)+"k";
+            }
+        </script>
+</body>
+</html>
